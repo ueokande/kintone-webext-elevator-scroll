@@ -1,0 +1,34 @@
+{
+  "name": "smooth-scroll-for-kintone",
+  "version": "0.0.1",
+  "description": "Smooth scroll for Kintone",
+  "scripts": {
+    "start": "webpack --mode development -w --debug --devtool inline-source-map",
+    "build": "NODE_ENV=production webpack --mode production --progress --display-error-details",
+    "package": "npm run build && script/package.sh",
+    "lint": "eslint --ext .js src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ueokande/smooth-scroll-for-kintone.git"
+  },
+  "keywords": [
+    "WebExtensions",
+    "kintone"
+  ],
+  "author": "Shin'ya UEOKA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ueokande/smooth-scripp-for-kintone/issues"
+  },
+  "homepage": "https://github.com/ueokande/smooth-scripp-for-kintone#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.5",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^5.12.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  }
+}
