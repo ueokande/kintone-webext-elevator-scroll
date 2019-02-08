@@ -65,6 +65,24 @@ describe('Link class', () => {
     });
   });
 
+  describe('#isRootPage', () => {
+    it('returns true if root page', () => {
+      let thread1 = 'https://example.cybozu.com/k/#/space/1234/thread/1234';
+      expect(Link.parseLink(thread1).isRootPage()).to.be.true;
+
+      let people1 = 'https://example.cybozu.com/k/#/people/user/alice';
+      expect(Link.parseLink(people1).isRootPage()).to.be.true;
+    })
+
+    it('returns false if root page', () => {
+      let thread1 = 'https://example.cybozu.com/k/#/space/1234/thread/5678/9012';
+      expect(Link.parseLink(thread1).isRootPage()).to.be.false;
+
+      let people1 = 'https://example.cybozu.com/k/#/people/user/alice/1234';
+      expect(Link.parseLink(people1).isRootPage()).to.be.false;
+    })
+  })
+
   describe('#isSamePage', () => {
     it('returns true if same page', () => {
       let thread1 = 'https://example.cybozu.com/k/#/space/1234/thread/5678/9012/3456';

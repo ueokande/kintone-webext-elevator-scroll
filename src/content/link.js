@@ -46,4 +46,8 @@ export default class Link {
       this.spaceId === other.spaceId &&
       this.threadId === other.threadId;
   }
+
+  isRootPage() {
+    return !this.postId;
+  }
 }
