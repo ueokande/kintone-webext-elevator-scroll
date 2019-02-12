@@ -11,7 +11,7 @@
   "content_scripts": [
     {
       "all_frames": true,
-      "matches": [ "*://*.cybozu.com" ],
+      "matches": [ "*://*.cybozu.com/k/*" ],
       "js": [ "build/content.js" ],
       "run_at": "document_end"
     }
