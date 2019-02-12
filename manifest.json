@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "smooth-scroll-for-kintone",
+  "name": "kintone-elevator-scroll",
   "description": "Smooth scroll for Kintone",
   "version": "0.1",
   "applications": {
     "gecko": {
-      "id": "smooth-scroll-for-kintone@i-beam.org"
+      "id": "kintone-elevator-scroll@i-beam.org"
     }
   },
   "icons": {
