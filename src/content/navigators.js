@@ -17,16 +17,12 @@ const addNavigator = (dom) => {
 
     let scroller = window.document.scrollingElement;
 
-    scroller.style.scrollBehavior = 'smooth';
-    setTimeout(() => {
-      scroller.style.scrollBehavior = '';
-    }, 500);
-
     let targetRect = targetElement.getBoundingClientRect();
-    scroller.scrollBy(
-      targetRect.left,
-      targetRect.top - 100,
-    );
+    scroller.scrollBy({
+      left: targetRect.left,
+      top: targetRect.top - 100,
+      behavior: 'smooth',
+    });
 
     e.preventDefault();
     e.stopPropagation();
