@@ -5,21 +5,25 @@ export default class Link {
     threadId,
     postId,
     commentId,
+    hash,
   }) {
     this.peopleId = peopleId;
     this.spaceId = spaceId;
     this.threadId = threadId;
     this.postId = postId;
     this.commentId = commentId;
+    this.hash = hash;
   }
 
   static parseLink(href) {
-    let words = new URL(href).hash.split('/');
+    let hash = new URL(href).hash;
+    let words = hash.split('/');
     if (words[1] === 'people') {
       return new Link({
         peopleId: words[3],
         postId: words[4],
         commentId: words[5],
+        hash,
       });
     }
     if (words[1] === 'space' && words.length >= 5) {
@@ -28,6 +32,7 @@ export default class Link {
         threadId: words[4],
         postId: words[5],
         commentId: words[6],
+        hash,
       });
     }
     throw new TypeError('unexpected URL: ' + href);
@@ -49,5 +54,9 @@ export default class Link {
 
   isRootPage() {
     return !this.postId;
+  }
+
+  hash() {
+    return this.hash;
   }
 }

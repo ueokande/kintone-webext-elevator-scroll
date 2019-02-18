@@ -16,13 +16,14 @@ const addNavigator = (dom) => {
     pages.setHighlight(targetElement);
 
     let scroller = window.document.scrollingElement;
-
     let targetRect = targetElement.getBoundingClientRect();
     scroller.scrollBy({
       left: targetRect.left,
       top: targetRect.top - 100,
       behavior: 'smooth',
     });
+
+    history.pushState(null, null, link.hash);
 
     e.preventDefault();
     e.stopPropagation();
